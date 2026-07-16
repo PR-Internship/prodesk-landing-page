@@ -4,7 +4,7 @@
   --font-label: "Geist", sans-serif; */
 
   --primary: #0F172A;
-  --secondary: #64748B;
+  --secondary: #475569;
   --accent: #06B6D4;
 
   --white: #FFFFFF;
@@ -503,7 +503,7 @@ a {
   /* font-family: var(--font-body); */
   font-size: 14px;
   line-height: 1.8;
-  color: #94A3B8;
+  color: #475569;
   max-width: 320px;
   margin-bottom: 26px;
 }
