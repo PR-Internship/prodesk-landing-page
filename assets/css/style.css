@@ -1,7 +1,7 @@
 :root {
-  --font-heading: "Hanken Grotesk", sans-serif;
+  /* --font-heading: "Hanken Grotesk", sans-serif;
   --font-body: "Hanken Grotesk", sans-serif;
-  --font-label: "Geist", sans-serif;
+  --font-label: "Geist", sans-serif; */
 
   --primary: #0F172A;
   --secondary: #64748B;
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  /* font-family: var(--font-body); */
   color: var(--primary);
   background: var(--white);
   line-height: 1.6;
@@ -88,7 +88,7 @@ a {
 }
 
 .navbar a {
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 15px;
   font-weight: 500;
   color: var(--secondary);
@@ -112,7 +112,7 @@ a {
 }
 
 .start-btn {
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 15px;
   font-weight: 600;
   padding: 12px 24px;
@@ -168,7 +168,7 @@ a {
 }
 
 .hero-content h1 {
-  font-family: var(--font-heading);
+  /* font-family: var(--font-heading); */
   font-size: 56px;
   line-height: 1.15;
   font-weight: 800;
@@ -182,7 +182,7 @@ a {
 .hero-content p {
   max-width: 520px;
   margin: 28px 0 36px;
-  font-family: var(--font-body);
+  /* font-family: var(--font-body); */
   font-size: 18px;
   line-height: 1.8;
   color: var(--secondary);
@@ -200,7 +200,7 @@ a {
   padding: 16px 20px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  font-family: var(--font-body);
+  /* font-family: var(--font-body); */
   font-size: 15px;
   color: var(--primary);
   background: var(--white);
@@ -219,7 +219,7 @@ a {
 
 .form-note {
   margin-top: 16px;
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 13px;
   color: var(--secondary);
 }
@@ -233,7 +233,7 @@ a {
   padding: 16px 30px;
   border: none;
   border-radius: 10px;
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -264,7 +264,7 @@ a {
 
 .tag {
   display: inline-block;
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -274,7 +274,7 @@ a {
 }
 
 .section-heading h2 {
-  font-family: var(--font-heading);
+  /* font-family: var(--font-heading); */
   font-size: 42px;
   font-weight: 800;
   color: var(--primary);
@@ -282,7 +282,7 @@ a {
 }
 
 .section-heading p {
-  font-family: var(--font-body);
+  /* font-family: var(--font-body); */
   font-size: 17px;
   color: var(--secondary);
 }
@@ -418,7 +418,7 @@ a {
 }
 
 .service-icon span {
-  font-size: 22px;                 /* Reduced from 28px */
+  font-size: 22px;                
   color: var(--primary);
 }
 
@@ -431,16 +431,16 @@ a {
 }
 
 .service-card h3 {
-  font-family: var(--font-heading);
-  font-size: 18px;                 /* Reduced from 22px */
+  /* font-family: var(--font-heading); */
+  font-size: 18px;                
   font-weight: 700;
   margin-bottom: 10px;
   color: var(--primary);
 }
 
 .service-card p {
-  font-family: var(--font-body);
-  font-size: 14px;                 /* Reduced from 15px */
+  /* font-family: var(--font-body); */
+  font-size: 14px;                
   line-height: 1.6;
   color: var(--secondary);
   margin-bottom: 16px;
@@ -449,7 +449,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 14px;
   font-weight: 600;
   color: var(--primary);
@@ -500,7 +500,7 @@ a {
 }
 
 .footer-brand p {
-  font-family: var(--font-body);
+  /* font-family: var(--font-body); */
   font-size: 14px;
   line-height: 1.8;
   color: #94A3B8;
@@ -516,7 +516,7 @@ a {
 }
 
 .footer-links h4 {
-  font-family: var(--font-heading);
+  /* font-family: var(--font-heading); */
   font-size: 16px;
   font-weight: 700;
   color: var(--white);
@@ -524,7 +524,7 @@ a {
 }
 
 .footer-links a {
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 13px;
   color: #94A3B8;
   transition: .3s ease;
@@ -543,7 +543,7 @@ a {
 }
 
 .footer-address h5 {
-  font-family: var(--font-heading);
+  /* font-family: var(--font-heading); */
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -553,7 +553,7 @@ a {
 }
 
 .footer-address p {
-  font-family: var(--font-label);
+  /* font-family: var(--font-label); */
   font-size: 13px;
   letter-spacing: 1px;
   color: #94A3B8;
