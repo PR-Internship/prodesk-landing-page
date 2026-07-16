@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-<meta
-    name="description"
-    content="ProDesk helps businesses build modern websites, web applications, and digital solutions with scalable, responsive, and user-focused development services.">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"> -->
+    <meta
+        name="description"
+        content="ProDesk helps businesses build modern websites, web applications, and digital solutions with scalable, responsive, and user-focused development services.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Prodecs IT</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Set theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -25,7 +31,7 @@
             <img src="assets/icons/prodecs logo (1).webp" alt="Prodesk Logo" class="logo-image">
         </div>
 
-        <nav class="navbar">
+        <nav class="navbar" id="primary-nav" aria-label="Primary">
             <a href="#" class="nav-link active">Home</a>
             <a href="#tech">About</a>
             <a href="#services">Services</a>
@@ -33,8 +39,32 @@
         </nav>
 
         <div class="header-actions">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                <!-- moon (shown in light mode) -->
+                <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <!-- sun (shown in dark mode) -->
+                <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+            </button>
             <button class="start-btn">Start Your Transformation</button>
-            <button class="menu-btn material-symbols-outlined">menu</button>
+            <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
         </div>
 
     </div>
@@ -60,17 +90,18 @@
                 </p>
 
                 <form class="hero-form" action="#" method="POST">
-                    <input type="email" name="email" placeholder="Enter your work email" required>
+                    <label class="visually-hidden" for="hero-email">Work email</label>
+                    <input type="email" id="hero-email" name="email" placeholder="Enter your work email" required>
                     <button type="submit" class="btn primary">
                         Contact Us
                     </button>
                 </form>
 
-                <p class="form-note">No spam. We'll get back to you within 24 hours.</p>
+                <p class="form-note">We'll get back to you within 24 hours.</p>
             </div>
             <div class="hero-image">
-                <img src="assets/image/img-removebg-preview (1).webp" class="hero-image" width="650" height="460" alt="Hero Illustration">          
-                  </div>
+                <img src="assets/image/img-removebg-preview (1).webp" class="hero-image" width="650" height="460" alt="Hero Illustration">
+            </div>
 
         </div>
     </div>
@@ -155,97 +186,146 @@
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">travel_explore</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <polyline points="16 18 22 12 16 6"/>
+                        <polyline points="8 6 2 12 8 18"/>
+                    </svg>
                 </div>
                 <h3>Custom Software Development</h3>
                 <p> Tailored software solutions designed to meet your unique business requirements, from web applications to mobile apps and beyond. </p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">travel_explore</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
                 </div>
                 <h3>Cybersecurity</h3>
                 <p>Rank higher, get found faster. We fine-tune your site's structure and content so search engines actually notice you.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">travel_explore</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                    </svg>
                 </div>
                 <h3>Cloud Services</h3>
                 <p>Rank higher, get found faster. We fine-tune your site's structure and content so search engines actually notice you.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">travel_explore</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="12" y1="20" x2="12" y2="10"/>
+                        <line x1="18" y1="20" x2="18" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="16"/>
+                    </svg>
                 </div>
                 <h3>Data Analytics</h3>
                 <p>Rank higher, get found faster. We fine-tune your site's structure and content so search engines actually notice you.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">code_blocks</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
                 </div>
                 <h3>Mobile App Development</h3>
                 <p>Rank higher, get found faster. We fine-tune your site's structure and content so search engines actually notice you.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">code_blocks</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
                 </div>
                 <h3>Web Development</h3>
                 <p>Rank higher, get found faster. We fine-tune your site's structure and content so search engines actually notice you.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">code_blocks</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                        <polyline points="2 17 12 22 22 17"/>
+                        <polyline points="2 12 12 17 22 12"/>
+                    </svg>
                 </div>
                 <h3>Digital Transformation</h3>
                 <p>Fast, scalable, and built to last. From landing pages to full platforms, we write code that doesn't break under pressure.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <span class="material-symbols-outlined">campaign</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="m3 11 18-5v12L3 14v-3z"/>
+                        <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>
+                    </svg>
                 </div>
                 <h3>Digital Marketing</h3>
                 <p>Campaigns that convert, not just impress. We turn your traffic into leads and your leads into paying customers.</p>
                 <a href="#" class="card-link">
                     Learn more
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
                 </a>
             </div>
 
